@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Don't Follow Me Back</title>
+  </head>
+  <body>
+    <dl id="dontFollowMeBack"></dl>
+    <script>
+      const accounts = [];
+      const dl = document.getElementById('dontFollowMeBack');
+      const itens = accounts
+        .sort((a, b) => a.username.localeCompare(b.username))
+        .map((a) => {
+          return `<dt style="font-weight: bold">${a.username}</dt><dt style="margin-bottom: 10px;">${a.full_name}</dt>`;
+        })
+        .join('');
+      dl.innerHTML = itens;
+    </script>
+  </body>
+</html>
